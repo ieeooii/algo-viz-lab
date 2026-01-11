@@ -27,13 +27,13 @@
 ### Install
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Dev
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 브라우저에서 http://localhost:3000 을 열면 정렬 시각화 화면이 뜹니다.
@@ -43,10 +43,10 @@ npm run dev
 
 ## Scripts
 
-- `npm run dev`: 개발 서버
-- `npm run build`: 프로덕션 빌드
-- `npm run start`: 빌드 결과 실행
-- `npm run lint`: 린트
+- `pnpm dev`: 개발 서버
+- `pnpm build`: 프로덕션 빌드
+- `pnpm start`: 빌드 결과 실행
+- `pnpm lint`: 린트
 
 ## Project Structure
 
