@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Algo Viz Lab
 
-## Getting Started
+정렬/그래프/DP 같은 알고리즘을 **직접 조작하면서** 이해할 수 있도록 만드는 시각화 실험실입니다.
 
-First, run the development server:
+현재는 **버블 정렬(Bubble sort)** 시뮬레이터가 포함되어 있습니다.
+
+## Features
+
+- 버블 정렬 단계별 애니메이션 (compare / swap / sorted)
+- `Shuffle`, `Start/Pause`
+- `Speed`, `Size` 슬라이더
+- 비교/교환 횟수, 현재 딜레이(ms) 표시
+
+## Tech Stack
+
+- Next.js (App Router) + TypeScript
+- React
+- vanilla-extract (타입 안전 CSS)
+- ESLint
+
+## Run Locally
+
+### Requirements
+
+- Node.js 18+ 권장
+
+### Install
+
+```bash
+npm install
+```
+
+### Dev
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 http://localhost:3000 을 열면 정렬 시각화 화면이 뜹니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> 참고: `dev`/`build` 스크립트는 `--webpack` 옵션을 사용합니다.
+> (vanilla-extract 설정과의 호환을 위해 webpack을 강제합니다.)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+- `npm run dev`: 개발 서버
+- `npm run build`: 프로덕션 빌드
+- `npm run start`: 빌드 결과 실행
+- `npm run lint`: 린트
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/page.tsx`: 홈에서 시뮬레이터 렌더
+- `app/sort/SortingVisualizer.tsx`: 정렬 시뮬레이터 UI/로직
+- `app/sort/sort.css.ts`: vanilla-extract 스타일
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Roadmap (Ideas)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 다른 정렬 알고리즘 추가 (Selection/Insertion/Merge/Quick/Heap 등)
+- Step-by-step(단발 실행) / 되감기 / 코드 하이라이트
+- 알고리즘별 시간복잡도/공간복잡도 표시
