@@ -1,5 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { bubbleSortSteps } from "../../modules/bubbleSort";
+import { selectionSortSteps } from "../../modules/selectionSort";
+import { insertionSortSteps } from "../../modules/insertionSort";
+import { mergeSortSteps } from "../../modules/mergeSort";
+import { quickSortSteps } from "../../modules/quickSort";
+import { heapSortSteps } from "../../modules/heapSort";
 import type { Algorithm, SortStep } from "../../modules/types";
 import { makeRandomArray } from "../../utils/randomArray";
 import { clamp } from "../../utils/math";
@@ -51,6 +56,16 @@ export function useSortingVisualizerController(): SortingVisualizerContextValue 
       switch (algorithm) {
         case "bubble":
           return bubbleSortSteps(current);
+        case "selection":
+          return selectionSortSteps(current);
+        case "insertion":
+          return insertionSortSteps(current);
+        case "merge":
+          return mergeSortSteps(current);
+        case "quick":
+          return quickSortSteps(current);
+        case "heap":
+          return heapSortSteps(current);
         default:
           return bubbleSortSteps(current);
       }

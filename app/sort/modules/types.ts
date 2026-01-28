@@ -1,4 +1,10 @@
-export type Algorithm = "bubble";
+export type Algorithm =
+  | "bubble"
+  | "selection"
+  | "insertion"
+  | "merge"
+  | "quick"
+  | "heap";
 
 export type SortStep =
   | { type: "compare"; i: number; j: number }

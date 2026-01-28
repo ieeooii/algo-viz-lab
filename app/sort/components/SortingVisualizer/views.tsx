@@ -36,7 +36,7 @@ export function Subtitle({ children }: TextProps) {
     <p className={styles.subtitle}>
       {children ?? (
         <>
-          버블 정렬을 단계별로 시각화합니다. 비교(compare)와 교환(swap)을
+          다양한 정렬 알고리즘을 단계별로 시각화합니다. 비교(compare)와 교환(swap)을
           애니메이션으로 확인하세요.
         </>
       )}
@@ -71,6 +71,11 @@ export function Controls() {
         aria-label="algorithm"
       >
         <option value="bubble">Bubble sort</option>
+        <option value="selection">Selection sort</option>
+        <option value="insertion">Insertion sort</option>
+        <option value="merge">Merge sort</option>
+        <option value="quick">Quick sort</option>
+        <option value="heap">Heap sort</option>
       </select>
 
       <button className={styles.button} onClick={generate} disabled={isRunning}>
@@ -161,7 +166,7 @@ export function Hint({ children }: BaseProps) {
       {children ?? (
         <>
           팁: Speed를 올리면 더 빠르게 진행되고, Pause로 멈춘 뒤 Start로 다시
-          실행할 수 있어요. (현재는 버블 정렬만 포함)
+          실행할 수 있어요.
         </>
       )}
     </p>
